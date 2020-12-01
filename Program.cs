@@ -15,13 +15,13 @@ namespace ConsoleApp1
             Employee o3 = new Employee("Amol");
             Employee o4 = new Employee();
 
-            Console.WriteLine(o1.EMPNO);
-            Console.WriteLine(o2.EMPNO);
-            Console.WriteLine(o3.EMPNO);
+            Console.WriteLine(o1.EmpNO);
+            Console.WriteLine(o2.EmpNO);
+            Console.WriteLine(o3.EmpNO);
 
-            Console.WriteLine(o3.EMPNO);
-            Console.WriteLine(o2.EMPNO);
-            Console.WriteLine(o1.EMPNO);
+            Console.WriteLine(o3.EmpNO);
+            Console.WriteLine(o2.EmpNO);
+            Console.WriteLine(o1.EmpNO);
             Console.ReadLine();
         }
     }
@@ -98,7 +98,7 @@ namespace ConsoleApp1
 
         private int empNo;
 
-        public int EMPNO
+        public int EmpNO
         {
             get
             {
