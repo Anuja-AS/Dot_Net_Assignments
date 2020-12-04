@@ -4,128 +4,105 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Day2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Employee o1 = new Employee("Amol", 12346, 10);
-            Employee o2 = new Employee("Amol", 12346);
-            Employee o3 = new Employee("Amol");
-            Employee o4 = new Employee();
-
-            Console.WriteLine(o1.EmpNO);
-            Console.WriteLine(o2.EmpNO);
-            Console.WriteLine(o3.EmpNO);
-
-            Console.WriteLine(o3.EmpNO);
-            Console.WriteLine(o2.EmpNO);
-            Console.WriteLine(o1.EmpNO);
-            Console.ReadLine();
+            public Manager
         }
     }
-    class Employee
+    public class Employee
     {
-        public Employee(string name = null, decimal basic = 0, short deptNo = 0)
-        {
-           
-            empNo = ++eNo;
-            Name = name;
-            Basic = basic;
-            DeptNo = deptNo;
-        }
-
-
-        #region Properties
-        private string name;
-        public string Name
-        {
-            set
+        public Employee(string name = null, int empno = 0, short deptno = 0,abstract decimal basic)
             {
-                if (value != null)
+                empno = ++EmpNo;
+                Name = name;
+                DeptNo = deptno;    
+                Basic = basic;
+            }
+    private string name;
+    public string Name
+    {
+        
+        set
+        {
+            if(value != null)
+            {
                 {
                     name = value;
-                }
+                } 
                 else
-                    Console.WriteLine("Invalid name");
+                    Console.WriteLine("");
             }
             get
-            {
+                {
                 return name;
             }
         }
+    }
 
-        private decimal basic;
-        public decimal Basic
+    private int empno;
+    public int EmpNo
+    {
+        get
         {
-            set
-            {
-                if (value >2000 && value <10000)
-                {
-                    basic = value;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Basic");
-                }
-            }
-            get
-            {
-                return basic;
-            }
+            return empno;
         }
+    }
 
-        private short deptNo;
-        public short DeptNo
+    private short deptno;
+    public short DeptNo
+    {
+        set
         {
-            set
-            {
-                if (value <= 0)
-                {
-                    Console.WriteLine("Invalid DeptNo");
-                }
-                else
-                {
-                    deptNo = value;
-                }
-            }
-            get
-            {
-                return deptNo;
-            }
+            deptno = 0;
         }
-
-        private int empNo;
-
-        public int EmpNO
+        get
         {
-            get
-            {
-                return empNo;
-            }
+            return deptno;
         }
-
-        private static int eNo;
-        public static int ENO
+    }
+    public abstract decimal CalcNetSalary();
+   
+    public class Manager : Employee class
         {
-            set
-            {
-                eNo = 0;
-            }
-            get
-            {
-                return eNo;
-            }
-        }
-        #endregion
-
-
-        public decimal getNetSalary()
+        public Manager(string design)
+    {
+         public string Designation
+    {
+        set
         {
-            return Basic + 2000 + 1000;
-        }
+            if (value != null)
+            {
+                design = value;
+            }
+            else
+            {
+                Console.WriteLine("invalid");
+            }
 
+        }
     }
 
 }
+
+    
+       
+    }
+
+    public class GeneralManager : Manager
+    {
+        public string Perks;
+    }
+
+    public class CEO : Employee
+    {
+        public sealed override CalNetSalary();
+    }
+
+ }
+
+    
+
